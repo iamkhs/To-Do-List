@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane fx:id="mainBorderPane" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.todolist.Controller">
+
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <left>
+        <ListView fx:id="todoListView" onKeyPressed="#handleKeyPressed">
+        </ListView>
+    </left>
+
+    <center>
+        <VBox style="-fx-background-color: white">
+            <TextArea fx:id="itemDetailsTextArea" editable="false" VBox.vgrow="ALWAYS" wrapText="true">
+                <font>
+                    <Font size="20"/>
+                </font>
+            </TextArea>
+            <HBox>
+                <Label text="Due: " style="-fx-background-color: white">
+                    <font>
+                        <Font name="Times New Roman bold" size="20"/>
+                    </font>
+                </Label>
+                <Label fx:id="deadlineLabel" style="-fx-background-color: white">
+                    <font>
+                        <Font name ="Times New Roman bold" size="20"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+
+    </center>
+
+    <bottom>
+        <VBox alignment="BASELINE_CENTER">
+            <Button fx:id="createItems" text="New" prefHeight="10" prefWidth="100" onAction="#showNewItemDialogue"/>
+        </VBox>
+    </bottom>
+</BorderPane>
